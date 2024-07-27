@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Pagamentos</title>
+</head>
+
+<body>
+    <form class="pix">
+        <div class="container-a">
+            <div class="linha">
+                <div class="formulario-a">
+                    <label for="valor">Valor</label>
+                    <input type="text" id="valor" name="valor" class="valor">
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="radio-group">
+                    <input type="radio" id="Pix" name="pagamento" value="Pix">
+                    <label for="Pix">PIX</label>
+
+                    <input type="radio" id="cc" name="pagamento" value="cc">
+                    <label for="cc">Cartão de Crédito</label>
+                </div>
+            </div>
+            <button type="button" class="btn-informar" onclick="informarDados()">Informar dados</button>
+        </div>
+
+        <div class="container-b" id="pix-container">
+            <div class="linha">
+                <label for="pix">PIX</label>
+                <div class="formulario-a">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" class="cpf">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-b" id="cc-container">
+            <div class="linha">
+                <label for="cartao">CARTÃO DE CRÉDITO</label>
+                <div class="formulario-a">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" name="numero" class="numero">
+                    <img id="bandeira" class="bandeira" src="" alt="Bandeira" width="30" height="30"
+                        style="display: none;">
+                </div>
+
+                <div class="formulario-a">
+                    <label for="titular">Titular</label>
+                    <input type="text" id="titular" name="titular" class="titular">
+                </div>
+
+                <div class="formulario-a">
+                    <label for="cod">Cód. Segurança</label>
+                    <input type="text" id="cod" name="cod" class="cod">
+                </div>
+
+                <div class="formulario-a">
+                    <label for="vencimento">Vencimento</label>
+                    <input type="text" id="vencimento" name="vencimento" class="vencimento">
+                </div>
+
+                <div class="formulario-a">
+                    <label for="parcelas"> Parcelas</label>
+                    <select id="parcelas" name="parcelas" class="parcelas">
+                        <option id="1" value="1x">1x</option>
+                        <option id="2" value="2x">2x</option>
+                        <option id="3" value="3x">3x</option>
+                        <option id="4" value="4x">4x</option>
+                        <option id="5" value="5x">5x</option>
+                    </select>
+                </div>
+
+                <div class="container-e">
+                    <div class="column">
+                        <div class="item">
+                            <label for="1x" class="bold" style="margin-top: 10px">1x:</label>
+                            <label id="p-total1" name="p-total" class="p-total"></label>
+                        </div>
+                        <div class="item">
+                            <label for="2x" class="bold" style="margin-top: 10px">2x:</label>
+                            <label id="p-total2" name="p-total" class="p-total"></label>
+                        </div>
+                        <div class="item">
+                            <label for="3x" class="bold" style="margin-top: 10px">3x:</label>
+                            <label id="p-total3" name="p-total" class="p-total"></label>
+                        </div>
+                        <div class="item">
+                            <label for="4x" class="bold" style="margin-top: 10px">4x:</label>
+                            <label id="p-total4" name="p-total" class="p-total"></label>
+                        </div>
+                        <div class="item">
+                            <label for="5x" class="bold" style="margin-top: 10px">5x:</label>
+                            <label id="p-total5" name="p-total" class="p-total"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-c" id="pagto-container">
+            <div class="linha">
+                <div class="formulario-b">
+                    <label for="total" class="bold">Total:</label>
+                    <label id="v-total" name="v-total" class="v-total"></label>
+                </div>
+            </div>
+            <button type="submit" class="btn-pagar" onclick="pagtoAceito()">Pagar</button>
+        </div>
+    </form>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
